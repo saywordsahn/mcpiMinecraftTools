@@ -6,11 +6,11 @@ player = mc.getPlayerEntityId("TCC_10")
 
 pos = mc.entity.getTilePos(player)
 
-length = 15
-width = 60
+length = 40
+width = 40
 useGlass = True
-floor = False
-ceiling = True
+floor = True
+ceiling = False
 light_source = 169
 
 for i in range(length):

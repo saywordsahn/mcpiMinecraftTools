@@ -1,6 +1,6 @@
 from mcpi.minecraft import Minecraft
 from mcpi import entity
-import timesa
+import time
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
 player = mc.getPlayerEntityId("TCC_10")
@@ -8,10 +8,13 @@ player = mc.getPlayerEntityId("TCC_10")
 pos = mc.entity.getTilePos(player)
 
 
-number = 100
-creature = entity.ZOMBIE
+number = 30
+creature = entity.PIG
 for i in range(number):
-    mc.spawnEntity(pos.x, pos.y, pos.z, creature)
+    mc.spawnEntity(creature, pos.x, pos.y, pos.z)
+    mc.spawnEntity(entity.BOAT, pos.x, pos.y, pos.z)
+    time.sleep(2)
+
 
 
 #

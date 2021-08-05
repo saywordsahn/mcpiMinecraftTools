@@ -7,12 +7,12 @@ player = mc.getPlayerEntityId("TCC_10")
 pos = mc.entity.getTilePos(player)
 
 
-length = 6
-width = 6
-height = 0
-blockType = block.GRASS
+length = 20
+width = 7
+height = 30
+blockType = block.GLASS
 
-facing = '-z'
+facing = '+x'
 hollow = False
 aquarium = False
 
