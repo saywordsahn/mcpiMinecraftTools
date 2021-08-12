@@ -2,14 +2,14 @@ from mcpi.minecraft import Minecraft
 from mcpi import block
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
-player = mc.getPlayerEntityId("TCC_10")
+player = mc.getPlayerEntityId("TCC_04")
 
 pos = mc.entity.getTilePos(player)
 
 
-length = 20
-width = 20
-height = 2
+length = 5
+width = 6
+height = 5
 
 blockInfo = []
 
@@ -17,10 +17,12 @@ blockInfo = []
 print(block)
 
 for i in range(length):
-    x = []
+    slice = []
     for j in range(height):
         y = []
         for k in range(width):
-            block = mc.getBlock(pos.x, pos.y, pos.z)
-            print(block)
-
+            block = mc.getBlock(pos.x + i, pos.y + j, pos.z + k)
+            y.append(block)
+        slice.append(y)
+    blockInfo.append(slice)
+print(blockInfo)

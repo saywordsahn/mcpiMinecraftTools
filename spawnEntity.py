@@ -1,14 +1,13 @@
 from mcpi.minecraft import Minecraft
 from mcpi import entity
-import timesa
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
-player = mc.getPlayerEntityId("TCC_10")
+player = mc.getPlayerEntityId("TCC_08")
 
 pos = mc.entity.getTilePos(player)
 
 
-number = 100
+number = 5
 creature = entity.ZOMBIE
 for i in range(number):
     mc.spawnEntity(pos.x, pos.y, pos.z, creature)

@@ -5,7 +5,7 @@ from mcpi import block
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
 # get the players id
-rina = mc.getPlayerEntityId("TCC_11")
+rina = mc.getPlayerEntityId("TCC_04")
 
 # Determine the Player's current position.
 x,y,z = mc.entity.getTilePos(rina)

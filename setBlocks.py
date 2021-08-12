@@ -2,17 +2,17 @@ from mcpi.minecraft import Minecraft
 from mcpi import block
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
-player = mc.getPlayerEntityId("TCC_10")
+player = mc.getPlayerEntityId("TCC_04")
 
 pos = mc.entity.getTilePos(player)
 
 
-length = 6
-width = 6
-height = 0
-blockType = block.GRASS
+length = 30
+width = 30
+height = 1
+blockType = block.WOOD_PLANKS, 1
 
-facing = '-z'
+facing = '+x'
 hollow = False
 aquarium = False
 

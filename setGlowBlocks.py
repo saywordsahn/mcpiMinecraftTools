@@ -2,12 +2,12 @@ from mcpi.minecraft import Minecraft
 from mcpi import block
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
-player = mc.getPlayerEntityId("TCC_10")
+player = mc.getPlayerEntityId("TCC_04")
 
 pos = mc.entity.getTilePos(player)
 
-length = 15
-width = 60
+length = 30
+width = 30
 useGlass = True
 floor = False
 ceiling = True
