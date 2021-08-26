@@ -8,16 +8,16 @@ player = mc.getPlayerEntityId("TCC_10")
 pos = mc.entity.getTilePos(player)
 
 
-number = 30
-creature = entity.PIG
+number = 5
+creature = entity.ZOMBIE
 # for i in range(number):
-#     mc.spawnEntity(creature, pos.x, pos.y, pos.z)
-#     mc.spawnEntity(entity.BOAT, pos.x, pos.y, pos.z)
+#     mc.spawnEntity( pos.x, pos.y, pos.z, creature)
 #     time.sleep(2)
 
-
-for entity in mc.getEntities():
-    if entity[2] == 'CREEPER':
-        mc.entity.setTilePos(entity[0], pos.x, pos.y, pos.z)
+while True:
+    for entity in mc.getEntities():
         print(entity)
-        time.sleep(.1)
+        if entity[2] == 'ZOMBIE':
+            mc.entity.setTilePos(entity[0], pos.x, pos.y, pos.z)
+            print(entity)
+            time.sleep(.1)

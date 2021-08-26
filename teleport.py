@@ -1,15 +1,16 @@
 from mcpi.minecraft import Minecraft
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
-ben = mc.getPlayerEntityId("TCC_10")
-rina = mc.getPlayerEntityId("KamuiLinkPro")
+ben = mc.getPlayerEntityId("TCC_05")
+anju = mc.getPlayerEntityId("KamuiLinkPro")
 
 bpos = mc.entity.getTilePos(ben)
-rpos = mc.entity.getTilePos(rina)
+apos = mc.entity.getTilePos(anju)
 
-pos = bpos
-
+pos = apos
 
 # rina's castle -1314, 10, -1440
-mc.entity.setTilePos(rina, pos.x, pos.y, pos.z)
-# mc.entity.setTilePos(ben, pos.x, pos.y, pos.z)
+# kamui's secret fort -493, 11, -1019
+mc.entity.setTilePos(ben, pos.x, pos.y, pos.z)
+# mc.entity.setTilePos(anju, -1314, 10, -1440)
+# mc.entity.setTilePos(ben, -1359, 130, -1500)

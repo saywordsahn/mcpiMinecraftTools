@@ -4,7 +4,7 @@ import time
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
 p1_name = 'TCC_10'
-p2_name = 'KamuiLinkPro'
+p2_name = 'TCC_09'
 
 p1_id = mc.getPlayerEntityId(p1_name)
 p2_id = mc.getPlayerEntityId(p2_name)

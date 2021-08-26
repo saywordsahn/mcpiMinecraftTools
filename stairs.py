@@ -7,12 +7,12 @@ player = mc.getPlayerEntityId("TCC_10")
 pos = mc.entity.getTilePos(player)
 
 
-facing = '-z'
+facing = '+z'
 
 block.REDSTONE = 152
 
-length = 150
-blockType = block.AIR
+length = 50
+blockType = block.TNT
 
 
 if facing == '+z':

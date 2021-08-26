@@ -44,11 +44,12 @@ while user_input != '3':
     user_input = input('Enter your selection (1-3): ')
 
     if user_input == '1':
-        length = input('Enter length: ')
-        width = input('Enter width: ')
-        height = input('Enter height: ')
+        length = int(input('Enter length: '))
+        width = int(input('Enter width: '))
+        height = int(input('Enter height: '))
         blockInfo = copy(length, width, height)
     if user_input == '2':
+        print('pasting')
         paste(blockInfo)
 
 
