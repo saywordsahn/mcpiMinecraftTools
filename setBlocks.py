@@ -2,15 +2,15 @@ from mcpi.minecraft import Minecraft
 from mcpi import block
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
-player = mc.getPlayerEntityId("TCC_03")
+player = mc.getPlayerEntityId("TCC_10")
 
 pos = mc.entity.getTilePos(player)
 
 
-length = 10
-width = 10
-height = 5
-blockType = block.WOOD_PLANKS
+length = 50
+width = 50
+height = 50
+blockType = block.GLASS
 
 facing = '+x'
 hollow = True

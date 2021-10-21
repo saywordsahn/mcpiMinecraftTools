@@ -40,7 +40,7 @@ class TeleportBlock(Block):
 
 
 
-p1_name = 'KamuiLinkPro'
+p1_name = 'KamuiSouls'
 p2_name = 'TCC_10'
 
 p1_id = mc.getPlayerEntityId(p1_name)
@@ -52,7 +52,8 @@ permissions = {p1_id: True, p2_id: True}
 ###############################
 secretBlock = Block(-484, 17, -1006, HitAction.SecretGate)
 tpBlock = TeleportBlock(-497, 11, -1016, -496, 20, -1016)
-blocks = [secretBlock, tpBlock]
+trickBlock = TeleportBlock(-513, 11, -1022, -496, -200, -1016)
+blocks = [secretBlock, tpBlock, trickBlock]
 
 print(p1_id)
 print(p2_id)
