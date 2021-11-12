@@ -2,15 +2,15 @@ from mcpi.minecraft import Minecraft
 from mcpi import block
 mc = Minecraft.create("mc2.tokyocodingclub.com")
 
-player = mc.getPlayerEntityId("TCC_04")
+player = mc.getPlayerEntityId("TCC_10")
 
 pos = mc.entity.getTilePos(player)
 
-length = 30
-width = 30
+length = 100
+width = 10
 useGlass = True
-floor = False
-ceiling = True
+floor = True
+ceiling = False
 light_source = 169
 
 for i in range(length):

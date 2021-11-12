@@ -6,14 +6,27 @@ player = mc.getPlayerEntityId("TCC_10")
 
 pos = mc.entity.getTilePos(player)
 
-length = 10
-blockType = block.GLASS
+
+facing = '+z'
+
+block.REDSTONE = 152
+
+length = 50
+blockType = block.TNT
 
 
-for i in range(length):
-    mc.setBlock(pos.x + i, pos.y + i, pos.z, blockType)
+if facing == '+z':
+    for i in range(length):
+        mc.setBlock(pos.x, pos.y - i, pos.z + i, blockType)
+elif facing == '-z':
+    for i in range(length):
+        mc.setBlock(pos.x, pos.y - i, pos.z - i , blockType)
 
-for i in range(length):
-    mc.setBlock(pos.x + i, pos.y + i + 1, pos.z, block.RAIL_POWERED )
+else:
+    for i in range(length):
+        mc.setBlock(pos.x + i, pos.y + i, pos.z, blockType)
+
+    for i in range(length):
+        mc.setBlock(pos.x + i, pos.y + i + 1, pos.z, block.RAIL_POWERED )
 
 
