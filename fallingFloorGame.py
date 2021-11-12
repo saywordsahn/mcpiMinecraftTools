@@ -4,22 +4,41 @@ import time
 import random
 
 
-mc = Minecraft.create("mc2.tokyocodingclub.com")
-me = mc.getPlayerEntityId("TCC_10")
-x, y, z = mc.entity.getTilePos(me)
+def get_high_score():
+    with open('highscore.txt') as f:
+        return float(f.readline())
 
-block.SLIME = 165
-block.SEA_LANTERN = 169
+
+def update_score(time):
+    with open('highscore.txt', 'w') as f:
+        f.truncate(0)
+        f.write(str(time))
+
 
 def build_walls(minecraft_var, x, y, z, size, levels, levels_height):
     minecraft_var.setBlocks(x - size - 1, 0, z - size - 1, x + size + 1, levels * levels_height + 1, z + size + 1,
                             block.SEA_LANTERN)
     minecraft_var.setBlocks(x - size, 0, z - size, x + size, levels * levels_height, z + size, block.AIR)
 
+
 def build_levels(minecraft_var, x, y, z, size, levels, levels_height):
     for i in range(levels):
         minecraft_var.setBlocks(x - size, i * levels_height, z - size, x + size, i * levels_height, z + size,
                                 block.SLIME)
+
+
+mc = Minecraft.create("mc2.tokyocodingclub.com")
+
+high_score = get_high_score()
+
+me = mc.getPlayerEntityId("TCC_10")
+x, y, z = mc.entity.getTilePos(me)
+
+
+
+
+block.SLIME = 165
+block.SEA_LANTERN = 169
 
 class ActiveBlock:
 
@@ -54,6 +73,7 @@ lv4 = 20
 lv5 = 10
 DEATH = 0
 mc.postToChat("someone had started the game!")
+mc.postToChat('Your current high score is: ' + str(high_score))
 
 while True:
     # get blocks under you
@@ -101,6 +121,12 @@ while True:
     if y < DEATH and my_level != 1000:
         my_level = 1000
         mc.postToChat("someone just died... XD")
+        # set score
+        now = time.time()
+        elapsed_time = now - start
+        if elapsed_time > high_score:
+            update_score(now - start)
+            mc.postToChat('NEW HIGH SCORE: ' + str(elapsed_time))
 
     if start > 0:
         now = time.time()
@@ -109,7 +135,7 @@ while True:
             mc.postToChat(elapsed_time)
             printed_value = elapsed_time
 
-            if elapsed_time > 50:
-                hardmode = True
-                if hardmode == True:
-                    mc.setBlocks(x, 0, z, x + 5, 60, z + 5, 42)
+            # if elapsed_time > 50:
+            #     hardmode = True
+            #     if hardmode == True:
+            #         mc.setBlocks(x, 0, z, x + 5, 60, z + 5, 42)
