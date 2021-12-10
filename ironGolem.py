@@ -7,13 +7,17 @@ player = mc.getPlayerEntityId("TCC_08")
 
 pos = mc.entity.getTilePos(player)
 
+def spawn_iron_golem(x, y, z):
+    mc.setBlock(x, y, z, block.IRON_BLOCK)
+    mc.setBlock(x, y + 1, z, block.IRON_BLOCK)
+    mc.setBlock(x + 1, y + 1, z, block.IRON_BLOCK)
+    mc.setBlock(x - 1, y + 1, z, block.IRON_BLOCK)
+    mc.setBlock(x, y + 2, z, block.PUMPKIN)
+
+
 count = 10
 for i in range(count):
     time.sleep(1)
-    mc.setBlock(pos.x, pos.y, pos.z, block.IRON_BLOCK)
-    mc.setBlock(pos.x, pos.y + 1, pos.z, block.IRON_BLOCK)
-    mc.setBlock(pos.x + 1, pos.y + 1, pos.z, block.IRON_BLOCK)
-    mc.setBlock(pos.x - 1, pos.y + 1, pos.z, block.IRON_BLOCK)
-    mc.setBlock(pos.x, pos.y + 2, pos.z, block.PUMPKIN)
+    spawn_iron_golem(pos.x, pos.y, pos.z)
 
 
